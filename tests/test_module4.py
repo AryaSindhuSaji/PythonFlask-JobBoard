@@ -2,19 +2,23 @@ import pytest
 import sys
 
 from jobs import app
-from .utils import *
 
 
 @pytest.mark.test_template_macros_module4
 def test_template_macros_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
     ), "The `_macros.html` template does not exist in the `templates` folder."
 
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 @pytest.mark.test_show_job_macro_definition_module4
 def test_show_job_macro_definition_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
@@ -25,13 +29,20 @@ def test_show_job_macro_definition_module4():
         show_job
     ), "Have you created the `show_job` macro and added the correct parameter?"
 
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 @pytest.mark.test_show_job_macro_html_module4
 def test_show_job_macro_html_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
     ), "The `_macros.html` template does not exist in the `templates` folder."
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
     html = template_macro_soup("_macros", "show_job")
     p = html.select(".card .card-header .card-header-title")
@@ -45,6 +56,7 @@ def test_show_job_macro_html_module4():
 
 @pytest.mark.test_show_job_macro_header_module4
 def test_show_job_macro_header_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
@@ -52,10 +64,14 @@ def test_show_job_macro_header_module4():
 
     job_title = "job:title" in template_variables("_macros")
     assert job_title, "Looks like the job title link does not have content."
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 
 @pytest.mark.test_show_job_macro_body_module4
 def test_show_job_macro_body_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
@@ -69,10 +85,14 @@ def test_show_job_macro_body_module4():
 
     description = "job:description" in template_variables("_macros")
     assert description, "Are you showing the job description?"
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 
 @pytest.mark.test_show_jobs_macro_definition_module4
 def test_show_jobs_macro_definition_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
@@ -82,10 +102,14 @@ def test_show_jobs_macro_definition_module4():
     assert (
         show_jobs
     ), "Have you created the `show_jobs` macro and added the correct parameter?"
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 
 @pytest.mark.test_show_jobs_macro_for_loop_module4
 def test_show_jobs_macro_for_loop_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
@@ -95,6 +119,9 @@ def test_show_jobs_macro_for_loop_module4():
     assert (
         show_jobs
     ), "Have you created the `show_jobs` macro and added the correct parameter?"
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
     div = template_macro_soup("_macros", "show_jobs").select("div.columns.is-multiline")
     div_len = len(div) == 1
@@ -108,6 +135,7 @@ def test_show_jobs_macro_for_loop_module4():
 
 @pytest.mark.test_show_jobs_macro_for_loop_body_module4
 def test_show_jobs_macro_for_loop_body_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
@@ -117,6 +145,9 @@ def test_show_jobs_macro_for_loop_body_module4():
     assert (
         show_jobs
     ), "Have you created the `show_jobs` macro and added the correct parameter?"
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
     div = template_macro_soup("_macros", "show_jobs").select("div.column.is-half")
     div_len = len(div) == 1
@@ -130,6 +161,7 @@ def test_show_jobs_macro_for_loop_body_module4():
 
 @pytest.mark.test_import_macros_module4
 def test_import_macros_module4():
+<<<<<<< HEAD
     macros_exists = template_exists("_macros")
     assert (
         macros_exists
@@ -137,10 +169,14 @@ def test_import_macros_module4():
 
     import_exists = "_macros.html:show_job:show_jobs:True" == template_import("layout")
     assert import_exists, "Have you imported `_macros.html` in `layout.html`?"
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 
 @pytest.mark.test_index_template_module4
 def test_index_template_module4():
+<<<<<<< HEAD
     index_exists = template_exists("index")
     assert (
         index_exists
@@ -150,10 +186,14 @@ def test_index_template_module4():
     assert (
         el
     ), "Has the `HTML` from `templates.html` been copied to the `index.html` template?"
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 
 @pytest.mark.test_display_all_jobs_module4
 def test_display_all_jobs_module4():
+<<<<<<< HEAD
     index_exists = template_exists("index")
     assert (
         index_exists
@@ -163,10 +203,14 @@ def test_display_all_jobs_module4():
     assert (
         show_jobs_call
     ), "Have you call the `show_jobs` macro in the `index.html` file?"
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
 
 
 @pytest.mark.test_app_jobs_route_jobs_module4
 def test_app_jobs_route_jobs_module4():
+<<<<<<< HEAD
     jobs_function = "jobs" in dir(app)
     assert jobs_function, "Have you created the `jobs` function?"
 
@@ -176,3 +220,6 @@ def test_app_jobs_route_jobs_module4():
 
     new_render_call = "render_template:index.html:jobs:jobs" in get_functions(app.jobs)
     assert new_render_call, "Have you added `jobs` to the `render_template` call."
+=======
+    pass
+>>>>>>> parent of 15f58ec... test: module 4 complete
